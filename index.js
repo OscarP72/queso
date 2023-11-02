@@ -47,7 +47,7 @@ router.delete("/quesos/:id", async (req,res) =>{
         await Queso.findByIdAndDelete(id);
         return res.status(200).json("Queso borrado");
     } catch (error) {
-        
+        return res.status(500).json("Error al borrar queso")
     }
 });
 router.patch("/quesos/:id", async (req, res) =>{
